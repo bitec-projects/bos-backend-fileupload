@@ -61,17 +61,17 @@ Fileupload.basicDashboard = {
 		{
 			name: 'directory',
 			type: 'text',
-			description: "Directory to save the uploaded files. Defaults to 'upload'."
+			description: "Diretório para salvar os arquivos recebidos. Padrão 'upload'."
 		},
 		{
 			name: 'authorization',
 			type: 'checkbox',
-			description: 'Do you require user to be logged-in to view / upload / delete files ?'
+			description: 'Usuário precisa estar logado para ver / enviar / apagar os arquivos ?'
 		},
 		{
 			name: 'uniqueFilename',
 			type: 'checkbox',
-			description: 'Allow unique file name ?'
+			description: 'Permitir arquivo de nome único ?'
 		}
 	]
 };

@@ -1,11 +1,14 @@
 {
   "name": "bos-backend-fileupload",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Bos Backend File Upload Module - Módulo de Recursos de Upload de Arquivos para Framework BOS (BierOnStack)",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/eduardo-bier-bos/bos-backend-fileupload"
   },
-  "author": "Carlos Eduardo Bier"
+  "author": "Carlos Eduardo Bier",
+  "dependencies": {
+    "formidable": "^2.1.1"
+  }
 }

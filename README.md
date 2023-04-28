@@ -19,5 +19,11 @@ Para usar recursos do FileUpload Module, você deve acessar o dashboard do BOS e
 
 ## Autor
 
-[Carlos Eduardo Bier](https://about.me/eduardo.bier.bos)
+[Carlos Eduardo Bier](https://about.me/eduardo.bier.bos)  
+<br>
+
+# Changelog  
+
+## 28-abr-2023 eduardo.bier
+Adicinando dependência para o módulo formidable, que é utilizado porém não havia sido adicionado como dependência do módulo.
 
