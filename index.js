@@ -4,6 +4,7 @@
  * Module dependencies
  */
 var Resource = require('bos-backend/lib/resource'),
+	bosBackendHelpers = require('bos-backend-helpers'),
 	util = require('util'),
 	path = require('path'),
 	debug = require('debug')('bos-backend-fileupload'),
@@ -44,10 +45,15 @@ function Fileupload(options) {
 
 	// If the directory doesn't exists, we'll create it
 	try {
-		console.log(this.config.fullDirectory);
 		fs.statSync(this.config.fullDirectory).isDirectory();
 	} catch (er) {
-		fs.mkdir(this.config.fullDirectory);
+		fs.mkdir(this.config.fullDirectory, (error) => {
+			if (error) {
+				bosBackendHelpers.log.error(`Erro criando diretório: ${this.config.fullDirectory}`);
+			} else {
+				bosBackendHelpers.log.success(`Diretório de Upload: ${this.config.fullDirectory} criado com sucesso!`);
+			}
+		});
 	}
 }
 
