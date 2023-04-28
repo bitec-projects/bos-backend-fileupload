@@ -43,17 +43,18 @@ function Fileupload(options) {
 		this.config.directory = this.config.directory + '_';
 	}
 
-	// If the directory doesn't exists, we'll create it
 	try {
-		fs.statSync(this.config.fullDirectory).isDirectory();
+		if (!fs.existsSync(this.config.fullDirectory)) {
+			fs.mkdir(this.config.fullDirectory, (error) => {
+				if (error) {
+					bosBackendHelpers.log.error(`Erro criando diretório: ${this.config.fullDirectory} - ${error}`);
+				} else {
+					bosBackendHelpers.log.success(`Diretório de Upload: ${this.config.fullDirectory} criado com sucesso!`);
+				}
+			});
+		}
 	} catch (er) {
-		fs.mkdir(this.config.fullDirectory, (error) => {
-			if (error) {
-				bosBackendHelpers.log.error(`Erro criando diretório: ${this.config.fullDirectory}`);
-			} else {
-				bosBackendHelpers.log.success(`Diretório de Upload: ${this.config.fullDirectory} criado com sucesso!`);
-			}
-		});
+		bosBackendHelpers.log.error(`Erro criando diretório: ${this.config.fullDirectory} - ${error}`);
 	}
 }
 
