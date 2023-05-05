@@ -28,3 +28,5 @@ Para usar recursos do FileUpload Module, você deve acessar o dashboard do BOS e
 Adicinando dependência para o módulo formidable, que é utilizado porém não havia sido adicionado como dependência do módulo.
 Corrigindo erro na criação do diretório quando o mesmo não existe e adicionando dependência ao BosBackendHelpers.
 
+## 05-mai-2023 eduardo.bier
+Alterando caminho da pasta default utilizada de public para bos-app-web
